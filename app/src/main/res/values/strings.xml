@@ -1,0 +1,114 @@
+<resources>
+    <string name="app_name">Регистрация сотрудников</string>
+    <string name="phone_number">Телефонный номер</string>
+    <string name="password">Пароль</string>
+    <string name="login_button">ВОЙТИ</string>
+    <string name="remember_check">Запомнить пользователя</string>
+
+    <string name="registration_label">Добавление нового сотрудника</string>
+    <string name="registration_first_name">Имя</string>
+    <string name="registration_last_name">Фамилия</string>
+    <string name="registration_fathers_name">Отчество</string>
+    <string name="registration_phone_number">Телефонный номер</string>
+    <string name="registration_address">Адрес проживания</string>
+    <string name="registration_date_of_birth">Дата рождения</string>
+    <string name="registration_passport_serial">Серийный номер паспорта</string>
+    <string name="registration_passport_company">Орган выдавший документ</string>
+    <string name="registration_set_password">Задайте пароль</string>
+    <string name="registration_confirm_password">Подтвердите пароль</string>
+    <string name="registration_role">Выберите роль</string>
+    <string name="registration_image">Выберите фото</string>
+    <string name="registration_image_select">Выбрать...</string>
+    <string name="registration_add_button">Добавить</string>
+    <string name="registration_select_image_instruction">Нажмите кнопу ВЫБРАТЬ что-бы выбрать фото из памяти устройства или сделать снимок</string>
+    <string name="msg_error_unable_select_profile_pic">Невозможно установить фото профиля. Пожалуйста попробуйте ещё раз!</string>
+
+
+
+    <string name="go_to_list">Список сотрудников</string>
+    <string name="go_to_registration">Форма регистрации</string>
+    <string name="lbl_set_profile_photo">Установить фото профиля</string>
+    <string name="lbl_take_camera_picture">Сделать снимок</string>
+    <string name="lbl_choose_from_gallery">Выбрать из галереи</string>
+    <string name="toast_image_intent_null">Ошибка! Пожалуйста попробуйте ещё раз!</string>
+
+    <string name="dialog_permission_title">Дать разрешение</string>
+    <string name="dialog_permission_message">Это приложение нуждается в разрешениях что-бы использовать некоторые возможности. Вы можете дать их в настройках.</string>
+    <string name="go_to_settings">ОТКРЫТЬ НАСТРОЙКИ</string>
+
+    <string name="users">Пользователи</string>
+
+    <string-array name="passport_code_list">
+        <item>ID</item>
+        <item>AN</item>
+        <item>AC</item>
+    </string-array>
+
+    <string-array name="roles_list">
+        <item>Инструктор</item>
+        <item>Координатор</item>
+        <item>Регистратор</item>
+    </string-array>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="country_code">+996</string>
+
+</resources>
+    <!--<resources>
+        <string name="app_name">Employee Registration</string>
+        <string name="phone_number">Phone number</string>
+        <string name="password">Password</string>
+        <string name="login_button">LOGIN</string>
+        <string name="remember_check">Remember user</string>
+
+        <string name="registration_label">Adding new employee</string>
+        <string name="registration_first_name">First name</string>
+        <string name="registration_last_name">Last name</string>
+        <string name="registration_fathers_name">Fathers name</string>
+        <string name="registration_phone_number">Phone number</string>
+        <string name="registration_address">Living address</string>
+        <string name="registration_date_of_birth">Date of birth</string>
+        <string name="registration_passport_serial">Passport serial number</string>
+        <string name="registration_passport_company">Company that gave passport</string>
+        <string name="registration_set_password">Set password</string>
+        <string name="registration_confirm_password">Confirm password</string>
+        <string name="registration_role">Select role</string>
+        <string name="registration_image">Select image</string>
+        <string name="registration_image_select">Select...</string>
+        <string name="registration_add_button">Add employee</string>
+        <string name="registration_select_image_instruction">Click SELECT button to choose or capture image</string>
+        <string name="msg_error_unable_select_profile_pic">Unable to set profile image. Please try again!</string>
+
+
+
+        <string name="go_to_list">Show the list of employees</string>
+        <string name="go_to_registration">Show registration form</string>
+        <string name="lbl_set_profile_photo">Set profile image</string>
+        <string name="lbl_take_camera_picture">Take a picture</string>
+        <string name="lbl_choose_from_gallery">Choose from gallery</string>
+        <string name="toast_image_intent_null">Image picker option is missing!</string>
+
+        <string name="dialog_permission_title">Grant Permissions</string>
+        <string name="dialog_permission_message">This app needs permission to use this feature. You can grant them in app settings.</string>
+        <string name="go_to_settings">GOTO SETTINGS</string>
+
+        <string name="users">Users</string>
+        <string name="tab1_title">Add new employee</string>
+        <string name="tab2_title">All employees</string>
+
+        <string-array name="passport_code_list">
+            <item>ID</item>
+            <item>AN</item>
+            <item>AC</item>
+        </string-array>
+
+        <string-array name="roles_list">
+            <item>Instructor</item>
+            <item>Coordinator</item>
+            <item>Registrar</item>
+        </string-array>
+
+        <string name="hello_blank_fragment">Hello blank fragment</string>
+        <string name="country_code">+996</string>
+
+    </resources>  -->

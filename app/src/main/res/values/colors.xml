@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1A50A0</color>
+    <color name="colorHint">#9E0E3979</color>
+    <color name="colorHintWhite">#9EFFFFFF</color>
+    <color name="colorPrimaryDark">#0E3979</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="whiteTextField">#B3FFFFFF</color>
+    <color name="blueTextField">#0D0065FF</color>
+    <color name="profile_default_tint">#E0E0E0</color>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/go_to_registration_button"
+        android:icon="@drawable/ic_person_add_36pt"
+        android:title="@string/go_to_registration" />
+
+    <item
+        android:id="@+id/go_to_list_button"
+        android:icon="@drawable/ic_format_list_bulleted_white_48pt_3x"
+        android:title="@string/go_to_list" />
+
+</menu>
