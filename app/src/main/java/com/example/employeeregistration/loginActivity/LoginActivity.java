@@ -8,50 +8,122 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.example.employeeregistration.MainActivity;
 import com.example.employeeregistration.R;
+import com.example.employeeregistration.WebReq;
 import com.example.employeeregistration.databinding.ActivityLoginBinding;
 import com.example.employeeregistration.registrationActivity.RegistrationActivity;
 
-public class LoginActivity extends AppCompatActivity {
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
+
+
+public class LoginActivity extends MainActivity {
     private ActivityLoginBinding mainBinding;
-    private static String PHONE_NUMBER = "708";
-    private static String PASSWORD = "pass";
-    private String newPhoneNumber;
-    private String newPassword;
+    private String tel_number;
+    private String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         mainBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
+        init();
     }
+
+    public void init() {
+        context = getApplicationContext();
+        sharedPreferences = getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
+        sharedPrefEditor = sharedPreferences.edit();
+    }
+
+
     /*
     ------------------------------------------------------------------------------------------------
     Here begins the methods for LOGIN button on Main activity
     */
     public void login(View view){
-        EditText phoneNumber =mainBinding.phoneNumField;
-        EditText password = mainBinding.passwordField;
+        EditText numField =mainBinding.phoneNumField;
+        EditText passwordField = mainBinding.passwordField;
 
-        newPhoneNumber = phoneNumber.getText().toString();
-        newPassword = password.getText().toString();
-
-        if(newPhoneNumber.equals(PHONE_NUMBER) && newPassword.equals(PASSWORD)) {
+        tel_number = numField.getText().toString();
+        password = passwordField.getText().toString();
+/*
+        if(tel_number.equals(PHONE_NUMBER) && this.password.equals(PASSWORD)) {
             animateButtonWidth();
             fadeOutTextAndSetProgressDialog();
             nextAction();
 
         } else {
             Toast.makeText(getApplicationContext(),"Phone number or password is incorrect",Toast.LENGTH_LONG).show();
+        }
+*/
+
+        if (tel_number.length()==0){
+            Toast.makeText(getApplicationContext(),"Invalid number Address",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (passwordField.length()<5){
+            Toast.makeText(getApplicationContext(),"Minimum password length should be 5 characters.",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        //all inputs are validated now perform login request
+        RequestParams params = new RequestParams();
+        params.add("type","login");
+        params.add("tel_number",tel_number);
+        params.add("password",password);
+
+        WebReq.post(context, "api.php", params, new LoginActivity.ResponseHandler());
+    }
+
+    private class ResponseHandler extends JsonHttpResponseHandler {
+        @Override
+        public void onStart() {
+            super.onStart();
+        }
+
+        @Override
+        public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+            super.onSuccess(statusCode, headers, response);
+            Log.d("response ", response.toString() + " ");
+            try {
+                if (response.getBoolean("error")) {
+                    // failed to login
+                    Toast.makeText(getApplicationContext(), response.getString("message"), Toast.LENGTH_SHORT).show();
+                } else {
+                    // successfully logged in
+                    JSONObject user = response.getJSONObject("user");
+                    //save login values
+                    sharedPrefEditor.putBoolean("login", true);
+                    sharedPrefEditor.putString("id", user.getString("id"));
+                    sharedPrefEditor.putString("name", user.getString("name"));
+                    sharedPrefEditor.putString("tel_number", user.getString("tel_number"));
+                    sharedPrefEditor.apply();
+                    sharedPrefEditor.commit();
+
+                    //Move to home activity
+                    animateButtonWidth();
+                    fadeOutTextAndSetProgressDialog();
+                    nextAction();
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
     }
 

@@ -7,13 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".registrationActivity.RegistrationActivity">
 
-    
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="top"
-        android:background="@drawable/nav_background">
+        android:background="@drawable/nav_background"
+        app:layout_constraintTop_toTopOf="parent">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -69,6 +70,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
                     android:inputType="phone"
+                    android:editable="false"
                     android:text="@string/country_code"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="18sp" />
@@ -226,7 +228,7 @@
                         android:layout_gravity="center"
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
-                        android:hint="дд/мм/гггг"
+                        android:hint="гггг-мм-дд"
                         android:inputType="date"
                         android:textColor="@color/colorPrimaryDark"
                         android:textColorHint="@color/colorHint"
@@ -358,7 +360,7 @@
                 android:elevation="4dp"
                 android:foreground="?selectableItemBackground">
 
-                <EditText
+                <in.anshul.libray.PasswordEditText
                     android:id="@+id/registration_set_password"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -367,7 +369,9 @@
                     android:layout_marginEnd="16dp"
                     android:inputType="textPassword"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:show_drawable="@drawable/ic_show_pass_blue"
+                    app:hide_drawable="@drawable/ic_hide_pass_blue"/>
             </FrameLayout>
 
             <TextView
@@ -388,7 +392,7 @@
                 android:elevation="4dp"
                 android:foreground="?selectableItemBackground">
 
-                <EditText
+                <in.anshul.libray.PasswordEditText
                     android:id="@+id/registration_confirm_password"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -397,7 +401,9 @@
                     android:layout_marginEnd="16dp"
                     android:inputType="textPassword"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    app:show_drawable="@drawable/ic_show_pass_blue"
+                    app:hide_drawable="@drawable/ic_hide_pass_blue"/>
             </FrameLayout>
 
 

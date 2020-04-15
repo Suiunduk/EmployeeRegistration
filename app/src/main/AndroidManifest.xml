@@ -38,7 +38,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
         <activity
-            android:name=".registrationActivity.ListActivity"
+            android:name=".ListActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         
         <!-- uCrop cropping activity -->

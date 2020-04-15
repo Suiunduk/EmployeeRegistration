@@ -9,8 +9,9 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
         android:gravity="top"
-        android:background="@drawable/nav_background"
+        android:background="@color/colorPrimary"
         tools:ignore="MissingConstraints">
         <TextView
             android:layout_width="wrap_content"
@@ -22,29 +23,19 @@
             />
     </androidx.appcompat.widget.Toolbar>
 
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:layout_marginTop="@dimen/app_bar_height"
-        android:layout_marginBottom="@dimen/app_bar_height"
-        tools:ignore="MissingConstraints">
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            android:layout_marginTop="55dp"
+            android:layout_marginBottom="55dp"
+            tools:ignore="MissingConstraints">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="LIST OF EMPLOYEES" />
-        </LinearLayout>
-    </ScrollView>
+
+        </androidx.recyclerview.widget.RecyclerView>
+
 
     <include
         layout="@layout/bottom_navigation_item"

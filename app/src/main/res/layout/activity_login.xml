@@ -45,19 +45,21 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/phone_number"
-                android:text="708"
+                android:text="+996708038380"
                 android:inputType="phone"
                 android:textColor="@color/colorAccent"/>
 
-            <EditText
+            <in.anshul.libray.PasswordEditText
                 android:id="@+id/passwordField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="@string/password"
-                android:text="pass"
+                android:text="12345678"
                 android:inputType="textPassword"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorAccent"
+                app:show_drawable="@drawable/ic_show_pass_white"
+                app:hide_drawable="@drawable/ic_hide_pass_white"/>
 
 
             <CheckBox
