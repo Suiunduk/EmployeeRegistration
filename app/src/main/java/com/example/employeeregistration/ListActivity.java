@@ -28,9 +28,6 @@ public class ListActivity extends MainActivity {
 
     private BottomNavigationView bottomNavigationView;
     private Bundle savedInstanceState;
-    //this is the JSON Data URL
-    //make sure you are using the correct ip else it will not work
-    private static final String URL_PRODUCTS = "http://192.168.0.100:90/api_get.php";
 
     //a list to store all the employees
     private List<EmployeeInfo> employeeInfoList;
@@ -123,6 +120,12 @@ public class ListActivity extends MainActivity {
                             employee.getString("tel_number"),
                             employee.getString("name"),
                             employee.getString("second_name"),
+                            employee.getString("third_name"),
+                            employee.getString("address"),
+                            employee.getString("birth_date"),
+                            employee.getString("passport_number"),
+                            employee.getString("passport_org"),
+                            employee.getString("password"),
                             employee.getString("role"),
                             employee.getString("photo")
                     ));

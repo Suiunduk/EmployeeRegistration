@@ -24,7 +24,6 @@
     <string name="msg_error_unable_select_profile_pic">Невозможно установить фото профиля. Пожалуйста попробуйте ещё раз!</string>
 
 
-
     <string name="go_to_list">Список сотрудников</string>
     <string name="go_to_registration">Форма регистрации</string>
     <string name="lbl_set_profile_photo">Установить фото профиля</string>
@@ -52,9 +51,9 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="country_code">+996</string>
+    <string name="employee_info">Информация о сотруднике</string>
 
-</resources>
-    <!--<resources>
+</resources><!--<resources>
         <string name="app_name">Employee Registration</string>
         <string name="phone_number">Phone number</string>
         <string name="password">Password</string>
